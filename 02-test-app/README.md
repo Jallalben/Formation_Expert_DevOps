@@ -3,6 +3,7 @@
 > **Date** : 17 Mars 2026
 > **Duree estimee** : 17 heures supervisees
 > **Competence evaluee** : Definir le cadre de votre formation
+> **Bloc RNCP** : BC02 — Piloter le developpement, les tests et la maintenance
 
 ---
 
@@ -33,15 +34,15 @@ Ce premier projet pose les fondations de l'ensemble de la formation. Il s'agit d
 
 ```
 Formation_Expert_DevOps/
-├── 01-demarrage/          # Cadrage et setup (ce projet)
-├── 02-test-app/           # Tests et amelioration d'une application
-├── 03-pilotage-dev/       # Pilotage du developpement full-stack
-├── 04-cicd-conteneurs/    # CI/CD avec GitLab, Docker, Kubernetes
-├── 05-iac-monitoring/     # IaC (Terraform, Ansible) + ELK
-├── 06-demarche-devops/    # Gestion complete d'une demarche DevOps
-├── 07-audit-solutions/    # Audit d'infrastructure et veille techno
-├── 08-management/         # Management d'equipes DevOps (Agile)
-├── 09-strategie/          # Conception d'une strategie DevOps
+├── 01-demarrage/          # P1 — Cadrage et setup (ce projet)
+├── 02-test-app/           # P2 — Tests et amelioration d'une application
+├── 03-pilotage-dev/       # P3 — Pilotage du developpement full-stack
+├── 04-cicd-conteneurs/    # P4 — CI/CD avec GitLab, Docker, Kubernetes
+├── 05-iac-monitoring/     # P5 — IaC (Terraform, Ansible) + ELK
+├── 06-demarche-devops/    # P6 — Gestion complete d'une demarche DevOps
+├── 07-audit-solutions/    # P7 — Audit d'infrastructure et veille techno
+├── 08-management/         # P8 — Management d'equipes DevOps (Agile)
+├── 09-strategie/          # P9 — Conception d'une strategie DevOps
 ├── .husky/                # Hooks Git (commit-msg)
 ├── .gitignore             # Exclusion de node_modules, .env, etc.
 ├── commitlint.config.js   # Regles Conventional Commits
@@ -51,6 +52,35 @@ Formation_Expert_DevOps/
 ```
 
 **Pourquoi cette structure ?** Chaque dossier correspond a un bloc de competences RNCP. Cette organisation permet de naviguer facilement entre les projets et de maintenir une tracabilite claire pour le jury.
+
+---
+
+## Mapping des blocs RNCP
+
+| Bloc RNCP | Intitule | Projets |
+|-----------|----------|---------|
+| BC01 | Analyser et concevoir des solutions logicielles | P7, P9 |
+| BC02 | Piloter le developpement, les tests et la maintenance | P1, P2, P3 |
+| BC03 | Planifier, organiser et preparer l'integration et le deploiement continu | P4, P5, P6 |
+| BC04 | Manager et encadrer les equipes | P8 |
+
+---
+
+## Vue d'ensemble des 9 projets
+
+| # | Projet | Heures | Competences cles |
+|---|--------|--------|------------------|
+| 1 | Demarrage de la formation | 17h | Cadrage, planification |
+| 2 | Tester et ameliorer une application existante | 30h | Back-end, front-end, tests, debogage |
+| 3 | Piloter le developpement d'une solution | 50h | API, architecture full-stack, doc technique |
+| 4 | CI/CD avec GitLab, Docker et Kubernetes | 60h | Docker, K8s, GitLab CI, scripts Python/Bash |
+| 5 | IaC avec Terraform, Ansible et ELK | 60h | Terraform, Ansible, ELK, AWS |
+| 6 | Gerer une demarche DevOps | 65h | DevSecOps, CI/CD, IaC, monitoring, release |
+| 7 | Analyser une infra et definir des solutions | 30h | Audit, veille techno, specifications |
+| 8 | Manager les equipes d'un projet DevOps | 30h | Agile, roadmap, montee en competences |
+| 9 | Concevoir une strategie DevOps | 60h | Architecture, amelioration continue |
+
+**Total : 402 heures supervisees**
 
 ---
 
