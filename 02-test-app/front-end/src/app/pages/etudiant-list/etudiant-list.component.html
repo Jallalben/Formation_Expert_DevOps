@@ -1,0 +1,53 @@
+<div class="card m-3">
+  <h5 class="card-header">
+    Liste des étudiants
+    <button class="btn btn-primary btn-sm float-right ml-2" (click)="goToCreate()">+ Ajouter</button>
+    <button class="btn btn-outline-secondary btn-sm float-right" (click)="logout()">Déconnexion</button>
+  </h5>
+  <div class="card-body">
+
+    @if (isLoading) {
+      <div class="alert alert-info">Chargement...</div>
+    }
+
+    @if (errorMessage) {
+      <div class="alert alert-danger">{{ errorMessage }}</div>
+    }
+
+    @if (!isLoading && etudiants.length === 0 && !errorMessage) {
+      <div class="alert alert-warning">Aucun étudiant enregistré.</div>
+    }
+
+    @if (etudiants.length > 0) {
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>N° Étudiant</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (etudiant of etudiants; track etudiant.id) {
+            <tr>
+              <td>{{ etudiant.id }}</td>
+              <td>{{ etudiant.firstName }}</td>
+              <td>{{ etudiant.lastName }}</td>
+              <td>{{ etudiant.email }}</td>
+              <td>{{ etudiant.studentNumber || '-' }}</td>
+              <td>
+                <button class="btn btn-info btn-sm mr-1" (click)="goToDetail(etudiant.id)">Détail</button>
+                <button class="btn btn-warning btn-sm mr-1" (click)="goToEdit(etudiant.id)">Modifier</button>
+                <button class="btn btn-danger btn-sm" (click)="delete(etudiant.id)">Supprimer</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="card m-3">
+  <h5 class="card-header">Détail de l'étudiant</h5>
+  <div class="card-body">
+
+    @if (isLoading) {
+      <div class="alert alert-info">Chargement...</div>
+    }
+
+    @if (errorMessage) {
+      <div class="alert alert-danger">{{ errorMessage }}</div>
+    }
+
+    @if (etudiant) {
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>ID</th>
+            <td>{{ etudiant.id }}</td>
+          </tr>
+          <tr>
+            <th>Prénom</th>
+            <td>{{ etudiant.firstName }}</td>
+          </tr>
+          <tr>
+            <th>Nom</th>
+            <td>{{ etudiant.lastName }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ etudiant.email }}</td>
+          </tr>
+          <tr>
+            <th>N° Étudiant</th>
+            <td>{{ etudiant.studentNumber || '-' }}</td>
+          </tr>
+          <tr>
+            <th>Créé le</th>
+            <td>{{ etudiant.createdAt | date:'dd/MM/yyyy HH:mm' }}</td>
+          </tr>
+          <tr>
+            <th>Modifié le</th>
+            <td>{{ etudiant.updatedAt | date:'dd/MM/yyyy HH:mm' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="text-center mt-3">
+        <button class="btn btn-warning mr-1" (click)="goToEdit()">Modifier</button>
+        <button class="btn btn-secondary" (click)="goToList()">Retour à la liste</button>
+      </div>
+    }
+
+  </div>
+</div>
